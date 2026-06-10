@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>حياتي ✨</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;overflow-x:hidden;}
+body{font-family:'Tajawal',sans-serif;min-height:100vh;direction:rtl;padding-bottom:85px;position:relative;}
+
+/* ── GRADIENT BG ── */
+#bgWrap{position:fixed;inset:0;z-index:0;transition:opacity 1s;}
+.bg-grad{position:absolute;inset:0;opacity:0;transition:opacity 1.2s;background-size:cover;background-position:center;}
+.bg-grad.on{opacity:1;}
+.bg-custom{background-size:cover!important;background-position:center!important;}
+/* Themes */
+.bg-mauve{background:radial-gradient(ellipse at 25% 20%,#d4b8c8 0%,transparent 55%),radial-gradient(ellipse at 75% 80%,#b8a8c8 0%,transparent 55%),radial-gradient(ellipse at 60% 40%,#c8b4b8 0%,transparent 60%),#c0aab8;}
+.bg-pink{background:radial-gradient(ellipse at 30% 20%,#f4a8c0 0%,transparent 50%),radial-gradient(ellipse at 70% 75%,#e890b0 0%,transparent 50%),radial-gradient(ellipse at 50% 50%,#f0b0c8 0%,transparent 60%),#e8a0b8;}
+.bg-blue{background:radial-gradient(ellipse at 25% 25%,#a8c4e8 0%,transparent 50%),radial-gradient(ellipse at 75% 70%,#90a8d8 0%,transparent 50%),radial-gradient(ellipse at 55% 45%,#b0cce8 0%,transparent 60%),#a0b8d8;}
+.bg-green{background:radial-gradient(ellipse at 30% 20%,#a8d4b8 0%,transparent 50%),radial-gradient(ellipse at 70% 75%,#90c4a0 0%,transparent 50%),radial-gradient(ellipse at 50% 50%,#b8d8c0 0%,transparent 60%),#a0c8b0;}
+.bg-peach{background:radial-gradient(ellipse at 25% 20%,#f4c4a8 0%,transparent 50%),radial-gradient(ellipse at 75% 75%,#e8b090 0%,transparent 50%),radial-gradient(ellipse at 55% 45%,#f0c8b0 0%,transparent 60%),#e8b8a0;}
+.bg-purple{background:radial-gradient(ellipse at 30% 25%,#c8a8e8 0%,transparent 50%),radial-gradient(ellipse at 70% 70%,#b090d8 0%,transparent 50%),radial-gradient(ellipse at 50% 50%,#d0b8e8 0%,transparent 60%),#b8a0d0;}
+
+/* ── FLOATING EMOJIS ── */
+#floatEmojis{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden;}
+.fe{position:absolute;font-size:1.4rem;animation:feFloat linear infinite;will-change:transform;filter:blur(0.5px);}
+@keyframes feFloat{
+  0%{transform:translateY(105vh) rotate(0deg) scale(0.8);opacity:0;}
+  5%{opacity:0.5;}
+  90%{opacity:0.3;}
+  100%{transform:translateY(-10vh) rotate(360deg) scale(1.1);opacity:0;}
+}
+
+/* ── APP ── */
+.app{position:relative;z-index:10;min-height:100vh;}
+
+/* ── TOPBAR ── */
+.topbar{
+  position:sticky;top:0;z-index:100;
+  padding:13px 15px 11px;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(30px) saturate(180%);
+  -webkit-backdrop-filter:blur(30px) saturate(180%);
+  border-bottom:1px solid rgba(255,255,255,0.25);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:1px;text-shadow:0 1px 8px rgba(0,0,0,0.15);}
+.topbar-btns{display:flex;gap:7px;}
+.tb-btn{
+  width:34px;height:34px;border-radius:12px;
+  background:rgba(255,255,255,0.22);
+  border:1px solid rgba(255,255,255,0.35);
+  color:#fff;font-size:0.9rem;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .25s;backdrop-filter:blur(10px);
+}
+.tb-btn:hover{background:rgba(255,255,255,0.35);transform:scale(1.08);}
+.tb-btn:active{transform:scale(0.94);}
+
+/* ── VINYL SECTION ── */
+.vinyl-wrap{
+  margin:12px 13px 0;
+  background:rgba(255,255,255,0.18);
+  backdrop-filter:blur(25px) saturate(160%);
+  -webkit-backdrop-filter:blur(25px) saturate(160%);
+  border:1px solid rgba(255,255,255,0.32);
+  border-radius:22px;
+  padding:14px 15px;
+  display:flex;align-items:center;gap:13px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.08);
+}
+.vinyl-disc-wrap{position:relative;width:58px;height:58px;flex-shrink:0;}
+.vinyl-disc{
+  width:58px;height:58px;border-radius:50%;
+  background:conic-gradient(
+    #5a6a8a 0deg,#4a5a7a 8deg,#6a7a9a 16deg,#4a5a7a 24deg,
+    #5a6a8a 32deg,#4a5a7a 40deg,#6a7a9a 48deg,#4a5a7a 56deg,
+    #5a6a8a 64deg,#4a5a7a 72deg,#6a7a9a 80deg,#4a5a7a 88deg,
+    #5a6a8a 96deg,#4a5a7a 104deg,#6a7a9a 112deg,#4a5a7a 120deg,
+    #5a6a8a 128deg,#4a5a7a 136deg,#6a7a9a 144deg,#4a5a7a 152deg,
+    #5a6a8a 160deg,#4a5a7a 168deg,#6a7a9a 176deg,#4a5a7a 184deg,
+    #5a6a8a 192deg,#4a5a7a 200deg,#6a7a9a 208deg,#4a5a7a 216deg,
+    #5a6a8a 224deg,#4a5a7a 232deg,#6a7a9a 240deg,#4a5a7a 248deg,
+    #5a6a8a 256deg,#4a5a7a 264deg,#6a7a9a 272deg,#4a5a7a 280deg,
+    #5a6a8a 288deg,#4a5a7a 296deg,#6a7a9a 304deg,#4a5a7a 312deg,
+    #5a6a8a 320deg,#4a5a7a 328deg,#6a7a9a 336deg,#4a5a7a 344deg,#5a6a8a 360deg
+  );
+  box-shadow:0 4px 16px rgba(0,0,0,0.25);
+  animation:vinylSpin 3s linear infinite;
+  animation-play-state:paused;
+  transition:filter 0.5s;
+  position:relative;
+}
+.vinyl-disc.playing{animation-play-state:running;}
+@keyframes vinylSpin{to{transform:rotate(360deg);}}
+.vinyl-center{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;
+}
+.vinyl-label{
+  width:22px;height:22px;border-radius:50%;
+  background:radial-gradient(circle,#f5f0e8 0%,#e8e0d0 100%);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.45rem;font-weight:800;color:#888;letter-spacing:-0.3px;text-align:center;line-height:1.2;
+}
+.vinyl-needle{
+  position:absolute;top:-4px;right:-12px;width:2px;height:34px;
+  background:linear-gradient(to bottom,#ccc,#999);border-radius:1px;
+  transform-origin:top center;transform:rotate(25deg);
+  transition:transform 0.5s ease;
+  box-shadow:0 1px 4px rgba(0,0,0,0.2);
+}
+.vinyl-needle.playing{transform:rotate(8deg);}
+.vinyl-info{flex:1;min-width:0;}
+.vinyl-track{font-size:0.82rem;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px 4px rgba(0,0,0,0.15);}
+.vinyl-artist{font-size:0.65rem;color:rgba(255,255,255,0.75);margin-top:2px;}
+.vinyl-progress{margin-top:7px;height:3px;background:rgba(255,255,255,0.25);border-radius:50px;overflow:hidden;}
+.vinyl-bar{height:100%;background:rgba(255,255,255,0.8);border-radius:50px;width:0%;transition:width 0.3s;}
+.vinyl-btns{display:flex;gap:6px;align-items:center;}
+.v-btn{
+  width:30px;height:30px;border-radius:50%;
+  background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.35);
+  color:#fff;font-size:0.75rem;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .2s;
+}
+.v-btn:hover{background:rgba(255,255,255,0.35);transform:scale(1.1);}
+.v-play{
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,0.35);border:1.5px solid rgba(255,255,255,0.6);
+  color:#fff;font-size:1rem;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .25s;
+  box-shadow:0 4px 14px rgba(0,0,0,0.12);
+}
+.v-play:hover{background:rgba(255,255,255,0.5);transform:scale(1.07);}
+.upload-music-btn{
+  font-size:0.6rem;color:rgba(255,255,255,0.7);cursor:pointer;
+  background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);
+  border-radius:20px;padding:3px 8px;white-space:nowrap;transition:all .2s;
+}
+.upload-music-btn:hover{background:rgba(255,255,255,0.22);}
+
+/* ── QUOTE ── */
+.quote-card{
+  margin:10px 13px 0;
+  background:rgba(255,255,255,0.18);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.3);
+  border-radius:20px;padding:14px 16px;
+  cursor:pointer;transition:all .3s;
+  box-shadow:0 4px 18px rgba(0,0,0,0.07);
+}
+.quote-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.1);}
+.quote-text{font-size:0.87rem;line-height:1.7;color:#fff;font-weight:500;text-shadow:0 1px 4px rgba(0,0,0,0.12);}
+.quote-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:7px;}
+.quote-hint{font-size:0.6rem;color:rgba(255,255,255,0.6);letter-spacing:.5px;}
+
+/* ── STATS ── */
+.stats-row{display:flex;gap:8px;padding:10px 13px 0;flex-wrap:wrap;}
+.s-pill{
+  flex:1;min-width:75px;
+  background:rgba(255,255,255,0.18);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,0.28);
+  border-radius:16px;padding:9px 10px;text-align:center;
+  transition:all .4s;
+}
+.s-num{font-size:1.4rem;font-weight:800;color:#fff;line-height:1;text-shadow:0 1px 6px rgba(0,0,0,0.12);}
+.s-lbl{font-size:0.56rem;color:rgba(255,255,255,0.75);margin-top:2px;letter-spacing:.3px;}
+
+/* ── PROGRESS ── */
+.prog-wrap{
+  margin:9px 13px 0;
+  background:rgba(255,255,255,0.16);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,0.26);
+  border-radius:16px;padding:12px 14px;
+}
+.prog-head{display:flex;justify-content:space-between;margin-bottom:7px;}
+.prog-lbl{font-size:0.7rem;font-weight:700;color:rgba(255,255,255,0.9);}
+.prog-pct{font-size:0.7rem;font-weight:800;color:#fff;}
+.prog-track{height:7px;background:rgba(255,255,255,0.2);border-radius:50px;overflow:hidden;}
+.prog-fill{height:100%;border-radius:50px;background:rgba(255,255,255,0.85);transition:width .8s cubic-bezier(.4,0,.2,1);}
+
+/* ── SECTION HEADER ── */
+.sec{
+  display:flex;align-items:center;gap:10px;
+  padding:16px 15px 7px;
+}
+.sec-line{flex:1;height:1px;background:rgba(255,255,255,0.25);}
+.sec-txt{font-size:0.6rem;font-weight:800;letter-spacing:3px;color:rgba(255,255,255,0.75);white-space:nowrap;text-transform:uppercase;}
+.sec-plus{
+  width:22px;height:22px;border-radius:8px;
+  background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);
+  color:#fff;font-size:0.85rem;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .2s;
+}
+.sec-plus:hover{background:rgba(255,255,255,0.35);transform:scale(1.1);}
+
+/* ── TASKS GRID ── */
+.tasks-cols{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:0 13px;}
+.task-col{
+  background:rgba(255,255,255,0.16);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.26);
+  border-radius:18px;padding:12px;
+}
+.tc-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;}
+.tc-title{font-size:0.62rem;font-weight:800;letter-spacing:1.5px;color:rgba(255,255,255,0.8);text-transform:uppercase;}
+.tc-add{
+  width:19px;height:19px;border-radius:6px;
+  background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);
+  color:#fff;font-size:0.75rem;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .2s;
+}
+.tc-add:hover{background:rgba(255,255,255,0.35);}
+.t-item{
+  display:flex;align-items:flex-start;gap:6px;
+  padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.12);
+  cursor:pointer;transition:all .2s;
+}
+.t-item:last-child{border-bottom:none;padding-bottom:0;}
+.t-item.done .t-text{text-decoration:line-through;opacity:0.5;}
+.t-cb{
+  width:14px;height:14px;min-width:14px;border-radius:4px;
+  border:1.5px solid rgba(255,255,255,0.4);margin-top:1px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.5rem;color:transparent;transition:all .25s;
+}
+.t-item.done .t-cb{background:rgba(255,255,255,0.7);color:rgba(0,0,0,0.5);border-color:transparent;}
+.t-text{font-size:0.72rem;color:#fff;line-height:1.35;text-shadow:0 1px 3px rgba(0,0,0,0.1);}
+.t-empty{font-size:0.68rem;color:rgba(255,255,255,0.5);text-align:center;padding:8px 0;}
+
+/* ══════════════════════════════════════
+   HABIT PILLS — EXACT MATCH TO IMAGES
+══════════════════════════════════════ */
+.habits-list{display:flex;flex-direction:column;gap:8px;padding:0 13px;}
+
+.habit-pill{
+  display:flex;align-items:center;gap:11px;
+  /* The key: semi-transparent dark pill like the images */
+  background:rgba(80,65,70,0.32);
+  backdrop-filter:blur(24px) saturate(150%);
+  -webkit-backdrop-filter:blur(24px) saturate(150%);
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:50px;
+  padding:11px 14px 11px 10px;
+  cursor:pointer;
+  transition:all .32s cubic-bezier(.4,0,.2,1);
+  position:relative;overflow:hidden;
+  animation:pillIn .45s ease both;
+  box-shadow:0 2px 12px rgba(0,0,0,0.1);
+}
+@keyframes pillIn{from{opacity:0;transform:translateX(18px);}to{opacity:1;transform:none;}}
+.habit-pill::before{
+  content:'';position:absolute;inset:0;border-radius:50px;
+  background:linear-gradient(135deg,rgba(255,255,255,0.08),transparent 60%);
+  pointer-events:none;
+}
+.habit-pill:hover{
+  background:rgba(80,65,70,0.45);
+  transform:translateX(-3px);
+  box-shadow:0 6px 22px rgba(0,0,0,0.15);
+  border-color:rgba(255,255,255,0.3);
+}
+.habit-pill:active{transform:scale(0.98);}
+.habit-pill.done{
+  background:rgba(80,65,70,0.48);
+  border-color:rgba(255,255,255,0.3);
+}
+.habit-pill.done .h-name{opacity:0.55;text-decoration:line-through;}
+
+/* Icon — rounded square white frosted like images */
+.h-ico{
+  width:36px;height:36px;min-width:36px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.22);
+  border:1px solid rgba(255,255,255,0.38);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  transition:all .3s;flex-shrink:0;
+}
+.habit-pill.done .h-ico{
+  background:rgba(255,255,255,0.35);
+  box-shadow:0 0 12px rgba(255,255,255,0.25);
+}
+
+/* Name */
+.h-body{flex:1;min-width:0;}
+.h-name{font-size:0.83rem;font-weight:600;color:#fff;line-height:1.3;text-shadow:0 1px 4px rgba(0,0,0,0.15);}
+.h-extras{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;}
+.h-link{
+  display:inline-flex;align-items:center;gap:3px;
+  background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.25);
+  border-radius:20px;padding:2px 8px;
+  color:rgba(255,255,255,0.9);font-size:0.58rem;font-weight:700;
+  text-decoration:none;transition:all .2s;white-space:nowrap;
+}
+.h-link:hover{background:rgba(255,255,255,0.28);}
+.h-file-btn{
+  display:inline-flex;align-items:center;gap:3px;
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
+  border-radius:20px;padding:2px 8px;
+  color:rgba(255,255,255,0.75);font-size:0.58rem;cursor:pointer;
+  transition:all .2s;white-space:nowrap;
+}
+.h-file-btn:hover{background:rgba(255,255,255,0.2);color:#fff;}
+.h-thumb{
+  width:26px;height:26px;border-radius:7px;object-fit:cover;
+  border:1px solid rgba(255,255,255,0.25);cursor:pointer;transition:transform .2s;
+}
+.h-thumb:hover{transform:scale(1.1);}
+
+/* Water */
+.water-row{display:flex;gap:3px;margin-top:5px;}
+.wdrop{font-size:0.9rem;cursor:pointer;transition:all .2s;opacity:0.2;}
+.wdrop.on{opacity:1;transform:scale(1.1);}
+
+/* Check circle */
+.h-check{
+  width:25px;height:25px;min-width:25px;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,0.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.72rem;font-weight:900;transition:all .3s;
+  color:transparent;background:transparent;flex-shrink:0;
+}
+.habit-pill.done .h-check{
+  background:rgba(255,255,255,0.85);
+  border-color:transparent;color:rgba(0,0,0,0.5);
+  box-shadow:0 0 10px rgba(255,255,255,0.4);
+}
+
+/* Three dots */
+.h-dots{
+  color:rgba(255,255,255,0.5);font-size:1.1rem;cursor:pointer;
+  padding:2px 4px;transition:color .2s;flex-shrink:0;
+}
+.h-dots:hover{color:#fff;}
+
+/* ── CHART ── */
+.chart-wrap{
+  margin:0 13px;
+  background:rgba(255,255,255,0.16);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,0.24);
+  border-radius:18px;padding:14px;
+}
+.chart-title{font-size:0.6rem;font-weight:800;letter-spacing:2px;color:rgba(255,255,255,0.75);text-transform:uppercase;margin-bottom:12px;}
+.bars{display:flex;align-items:flex-end;gap:5px;height:75px;}
+.bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.bar{width:100%;border-radius:6px 6px 0 0;background:rgba(255,255,255,0.5);min-height:4px;transition:height .8s cubic-bezier(.4,0,.2,1);}
+.bar-lbl{font-size:0.52rem;color:rgba(255,255,255,0.65);}
+
+/* ── BOTTOM NAV ── */
+.bot-nav{
+  position:fixed;bottom:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(30px) saturate(180%);
+  -webkit-backdrop-filter:blur(30px) saturate(180%);
+  border-top:1px solid rgba(255,255,255,0.2);
+  display:flex;justify-content:space-around;padding:8px 0 17px;
+  transition:background .5s;
+}
+.nav-item{
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  color:rgba(255,255,255,0.55);cursor:pointer;transition:all .3s;
+  font-size:0.56rem;font-weight:700;letter-spacing:.5px;
+  padding:5px 14px;border-radius:14px;
+}
+.nav-item .ni{font-size:1.15rem;transition:all .3s;}
+.nav-item.active{color:#fff;}
+.nav-item.active .ni{transform:scale(1.15);filter:drop-shadow(0 0 5px rgba(255,255,255,0.6));}
+
+/* ── OVERLAY / PANELS ── */
+.overlay{
+  position:fixed;inset:0;z-index:200;
+  background:rgba(0,0,0,0.3);backdrop-filter:blur(8px);
+  display:none;align-items:flex-end;justify-content:center;
+}
+.overlay.open{display:flex;}
+.panel{
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(40px) saturate(200%);
+  -webkit-backdrop-filter:blur(40px) saturate(200%);
+  border:1px solid rgba(255,255,255,0.3);
+  border-radius:28px 28px 0 0;
+  padding:14px 16px 38px;
+  width:100%;max-width:520px;
+  max-height:88vh;overflow-y:auto;
+  animation:panelUp .38s cubic-bezier(.4,0,.2,1);
+}
+@keyframes panelUp{from{transform:translateY(100%);}to{transform:none;}}
+.drag{width:36px;height:4px;background:rgba(255,255,255,0.4);border-radius:2px;margin:0 auto 14px;}
+.p-title{font-size:0.9rem;font-weight:800;color:#fff;text-align:center;margin-bottom:14px;letter-spacing:.5px;text-shadow:0 1px 4px rgba(0,0,0,0.1);}
+
+/* Inputs */
+.p-inp{
+  width:100%;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);
+  border-radius:13px;color:#fff;padding:11px 13px;
+  font-family:'Tajawal',sans-serif;font-size:0.85rem;outline:none;margin-bottom:9px;
+}
+.p-inp::placeholder{color:rgba(255,255,255,0.5);}
+.p-inp:focus{border-color:rgba(255,255,255,0.55);background:rgba(255,255,255,0.26);}
+
+/* Emoji grid */
+.ep{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;}
+.eb{
+  width:33px;height:33px;border-radius:10px;
+  background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.22);
+  font-size:1rem;cursor:pointer;transition:all .2s;
+  display:flex;align-items:center;justify-content:center;
+}
+.eb.sel{background:rgba(255,255,255,0.35);border-color:rgba(255,255,255,0.55);transform:scale(1.1);}
+
+/* Theme grid */
+.th-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
+.th-opt{
+  height:50px;border-radius:14px;cursor:pointer;
+  border:2.5px solid transparent;transition:all .3s;
+  display:flex;align-items:flex-end;justify-content:center;
+  padding-bottom:5px;font-size:0.62rem;font-weight:800;
+  color:rgba(255,255,255,0.9);text-shadow:0 1px 3px rgba(0,0,0,0.3);
+}
+.th-opt.sel{border-color:rgba(255,255,255,0.9);box-shadow:0 0 0 3px rgba(255,255,255,0.3);}
+
+/* Upload */
+.up-area{
+  width:100%;padding:13px;
+  background:rgba(255,255,255,0.14);border:1.5px dashed rgba(255,255,255,0.3);
+  border-radius:13px;text-align:center;
+  color:rgba(255,255,255,0.75);font-size:0.8rem;cursor:pointer;
+  transition:all .3s;margin-bottom:9px;font-family:'Tajawal',sans-serif;
+}
+.up-area:hover{background:rgba(255,255,255,0.22);border-color:rgba(255,255,255,0.5);}
+
+/* Buttons */
+.p-btn{
+  width:100%;padding:13px;border-radius:14px;
+  background:rgba(255,255,255,0.3);border:1.5px solid rgba(255,255,255,0.45);
+  color:#fff;font-family:'Tajawal',sans-serif;font-size:0.9rem;font-weight:800;
+  cursor:pointer;transition:all .3s;margin-top:5px;letter-spacing:.5px;
+  text-shadow:0 1px 3px rgba(0,0,0,0.1);
+}
+.p-btn:hover{background:rgba(255,255,255,0.42);transform:translateY(-1px);}
+.p-close{
+  width:100%;padding:11px;border-radius:12px;margin-top:7px;
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
+  color:rgba(255,255,255,0.7);font-family:'Tajawal',sans-serif;font-size:0.82rem;cursor:pointer;
+  transition:all .2s;
+}
+.p-close:hover{color:#fff;background:rgba(255,255,255,0.18);}
+
+/* Quote list */
+.q-list{max-height:200px;overflow-y:auto;display:flex;flex-direction:column;gap:6px;margin-bottom:11px;}
+.q-item{
+  background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.2);
+  border-radius:12px;padding:9px 12px;color:#fff;font-size:0.77rem;line-height:1.5;
+  display:flex;justify-content:space-between;align-items:flex-start;gap:6px;
+}
+.q-del{background:none;border:none;color:rgba(255,150,150,.8);cursor:pointer;font-size:0.9rem;flex-shrink:0;}
+.qa-row{display:flex;gap:7px;}
+.qa-row textarea{
+  flex:1;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);
+  border-radius:12px;color:#fff;padding:9px 11px;
+  font-family:'Tajawal',sans-serif;font-size:0.8rem;resize:none;height:56px;outline:none;
+}
+.qa-row button{
+  background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);
+  border-radius:12px;color:#fff;padding:0 12px;cursor:pointer;font-size:1.2rem;transition:all .2s;
+}
+.qa-row button:hover{background:rgba(255,255,255,0.32);}
+
+/* File viewer */
+.fv{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.88);backdrop-filter:blur(14px);display:none;align-items:center;justify-content:center;flex-direction:column;gap:13px;}
+.fv.open{display:flex;}
+.fv img,.fv video,.fv audio{max-width:92vw;max-height:74vh;border-radius:14px;}
+.fv audio{width:90vw;max-width:400px;}
+.fv-close{color:rgba(255,255,255,0.7);font-size:0.82rem;cursor:pointer;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:50px;padding:8px 20px;font-family:'Tajawal',sans-serif;}
+
+/* Toast */
+.toast{
+  position:fixed;top:70px;left:50%;transform:translateX(-50%);
+  background:rgba(80,60,70,0.75);backdrop-filter:blur(20px);
+  color:#fff;border-radius:50px;border:1px solid rgba(255,255,255,0.25);
+  padding:9px 20px;font-size:0.78rem;font-weight:700;
+  z-index:300;opacity:0;transition:all .4s;pointer-events:none;white-space:nowrap;
+}
+.toast.show{opacity:1;}
+
+/* Confetti */
+.conf{position:fixed;z-index:400;pointer-events:none;border-radius:2px;animation:confFall 2s ease forwards;}
+@keyframes confFall{0%{transform:translateY(-10px) rotate(0deg);opacity:1;}100%{transform:translateY(105vh) rotate(720deg);opacity:0;}}
+
+/* Month cal */
+.cal-wrap{padding:0 13px;}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
+.cal-hdr{font-size:0.56rem;color:rgba(255,255,255,0.55);text-align:center;padding:2px 0 5px;font-weight:700;}
+.cal-day{
+  aspect-ratio:1;border-radius:9px;
+  background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.65rem;color:rgba(255,255,255,0.65);font-weight:600;cursor:pointer;transition:all .2s;
+  position:relative;
+}
+.cal-day.today{border-color:rgba(255,255,255,0.65);color:#fff;font-weight:900;}
+.cal-day.has::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.7);}
+
+/* Stats page */
+.stats-pg{padding:0 13px;}
+.s-card{
+  background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.24);
+  border-radius:18px;padding:15px;margin-bottom:10px;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+}
+.s-card-title{font-size:0.6rem;font-weight:800;letter-spacing:2px;color:rgba(255,255,255,0.7);text-transform:uppercase;margin-bottom:12px;}
+.big-nums{display:flex;gap:8px;flex-wrap:wrap;}
+.big-num{flex:1;min-width:75px;text-align:center;}
+.big-num .n{font-size:1.7rem;font-weight:900;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,0.12);}
+.big-num .l{font-size:0.58rem;color:rgba(255,255,255,0.65);margin-top:2px;}
+.month-bars{display:flex;align-items:flex-end;gap:5px;height:65px;margin-top:8px;}
+.mb-w{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;}
+.mb{width:100%;border-radius:5px 5px 0 0;background:rgba(255,255,255,0.5);min-height:3px;transition:height .8s ease;}
+.mb-l{font-size:0.48rem;color:rgba(255,255,255,0.6);}
+</style>
+</head>
+<body>
+
+<!-- BG -->
+<div id="bgWrap">
+  <div class="bg-grad bg-mauve on" id="bg-mauve"></div>
+  <div class="bg-grad bg-pink" id="bg-pink"></div>
+  <div class="bg-grad bg-blue" id="bg-blue"></div>
+  <div class="bg-grad bg-green" id="bg-green"></div>
+  <div class="bg-grad bg-peach" id="bg-peach"></div>
+  <div class="bg-grad bg-purple" id="bg-purple"></div>
+  <div class="bg-grad" id="bg-custom"></div>
+</div>
+
+<!-- FLOATING EMOJIS -->
+<div id="floatEmojis"></div>
+
+<div class="toast" id="toast"></div>
+<div class="fv" id="fv"><div id="fvC"></div><button class="fv-close" onclick="closeFV()">✕ إغلاق</button></div>
+
+<div class="app">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="logo">✦ حياتي</div>
+    <div class="topbar-btns">
+      <div class="tb-btn" onclick="openP('p-add')">＋</div>
+      <div class="tb-btn" onclick="openP('p-quote')">💬</div>
+      <div class="tb-btn" onclick="openP('p-settings')">⚙︎</div>
+    </div>
+  </div>
+
+  <!-- TODAY PAGE -->
+  <div id="pg-today">
+
+    <!-- VINYL -->
+    <div class="vinyl-wrap">
+      <div class="vinyl-disc-wrap">
+        <div class="vinyl-disc" id="vDisc"></div>
+        <div class="vinyl-center">
+          <div class="vinyl-label" id="vLabel">♪</div>
+        </div>
+        <div class="vinyl-needle" id="vNeedle"></div>
+      </div>
+      <div class="vinyl-info">
+        <div class="vinyl-track" id="vTrack">اختاري موسيقى 🎵</div>
+        <div class="vinyl-artist" id="vArtist">اضغطي لرفع ملف صوتي</div>
+        <div class="vinyl-progress"><div class="vinyl-bar" id="vBar"></div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start">
+        <div class="vinyl-btns">
+          <div class="v-btn" onclick="prevT()">⏮</div>
+          <div class="v-play" id="vPlay" onclick="togglePlay()">▶</div>
+          <div class="v-btn" onclick="nextT()">⏭</div>
+        </div>
+        <label class="upload-music-btn">
+          <input type="file" accept="audio/*" multiple style="display:none" onchange="loadMusic(this)">
+          🎵 رفع موسيقى
+        </label>
+      </div>
+    </div>
+    <!-- Hidden audio element -->
+    <audio id="audioEl" onended="nextT()" ontimeupdate="updateBar()"></audio>
+
+    <!-- QUOTE -->
+    <div class="quote-card" onclick="nextQ()">
+      <div class="quote-text" id="qText">✨ اضغطي لعبارة تحفيزية...</div>
+      <div class="quote-bottom">
+        <div class="quote-hint">اضغطي لعبارة جديدة ✦</div>
+        <span id="qEmoji">🌸</span>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-row">
+      <div class="s-pill"><div class="s-num" id="sDay">—</div><div class="s-lbl">اليوم</div></div>
+      <div class="s-pill"><div class="s-num" id="sStreak">🔥0</div><div class="s-lbl">متتالي</div></div>
+      <div class="s-pill"><div class="s-num" id="sDone">0</div><div class="s-lbl">منجز</div></div>
+      <div class="s-pill"><div class="s-num" id="sWater">💧0</div><div class="s-lbl">أكواب</div></div>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="prog-wrap">
+      <div class="prog-head"><div class="prog-lbl">تقدم اليوم ✦</div><div class="prog-pct" id="progPct">0%</div></div>
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    </div>
+
+    <!-- TASKS -->
+    <div class="sec"><div class="sec-line"></div><div class="sec-txt">مهامي</div><div class="sec-line"></div></div>
+    <div class="tasks-cols">
+      <div class="task-col">
+        <div class="tc-head"><span class="tc-title">📅 أسبوعية</span><div class="tc-add" onclick="openTask('weekly')">＋</div></div>
+        <div id="weeklyTasks"></div>
+      </div>
+      <div class="task-col">
+        <div class="tc-head"><span class="tc-title">🗓 شهرية</span><div class="tc-add" onclick="openTask('monthly')">＋</div></div>
+        <div id="monthlyTasks"></div>
+      </div>
+    </div>
+
+    <!-- HABITS -->
+    <div class="sec">
+      <div class="sec-line"></div>
+      <div class="sec-txt">عاداتي اليومية</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="habits-list" id="habitsList"></div>
+
+    <!-- CHART -->
+    <div class="sec"><div class="sec-line"></div><div class="sec-txt">تقدم الأسبوع</div><div class="sec-line"></div></div>
+    <div class="chart-wrap">
+      <div class="chart-title">نسبة الإنجاز يومياً</div>
+      <div class="bars" id="weekBars"></div>
+    </div>
+    <div style="height:10px"></div>
+
+  </div><!-- end today -->
+
+  <!-- MONTH PAGE -->
+  <div id="pg-month" style="display:none">
+    <div class="sec" style="margin-top:12px"><div class="sec-line"></div><div class="sec-txt" id="calTitle">الشهر</div><div class="sec-line"></div></div>
+    <div class="cal-wrap">
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;padding-bottom:5px">
+        <div class="cal-hdr">أح</div><div class="cal-hdr">إث</div><div class="cal-hdr">ث</div>
+        <div class="cal-hdr">أر</div><div class="cal-hdr">خ</div><div class="cal-hdr">ج</div><div class="cal-hdr">س</div>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+    </div>
+  </div>
+
+  <!-- STATS PAGE -->
+  <div id="pg-stats" style="display:none">
+    <div class="sec" style="margin-top:12px"><div class="sec-line"></div><div class="sec-txt">إحصائياتي</div><div class="sec-line"></div></div>
+    <div class="stats-pg" id="statsContent"></div>
+  </div>
+
+</div><!-- end app -->
+
+<!-- BOT NAV -->
+<div class="bot-nav">
+  <div class="nav-item active" id="nav-today" onclick="goPage('today')"><div class="ni">🏠</div><span>اليوم</span></div>
+  <div class="nav-item" id="nav-month" onclick="goPage('month')"><div class="ni">📅</div><span>الشهر</span></div>
+  <div class="nav-item" id="nav-stats" onclick="goPage('stats')"><div class="ni">📊</div><span>تقدمي</span></div>
+</div>
+
+<!-- SETTINGS PANEL -->
+<div class="overlay" id="p-settings" onclick="if(event.target===this)closeP('p-settings')">
+  <div class="panel">
+    <div class="drag"></div>
+    <div class="p-title">⚙︎ الإعدادات</div>
+    <div style="font-size:0.68rem;color:rgba(255,255,255,0.7);margin-bottom:8px;font-weight:700">🎨 الثيم</div>
+    <div class="th-grid" id="thGrid"></div>
+    <label class="up-area">
+      <input type="file" accept="image/*" style="display:none" onchange="setCustomBg(this)">
+      🖼 رفع صورة خاصة كخلفية
+    </label>
+    <button class="p-close" onclick="closeP('p-settings')">إغلاق</button>
+  </div>
+</div>
+
+<!-- QUOTE PANEL -->
+<div class="overlay" id="p-quote" onclick="if(event.target===this)closeP('p-quote')">
+  <div class="panel">
+    <div class="drag"></div>
+    <div class="p-title">💬 عباراتي</div>
+    <div class="q-list" id="qList"></div>
+    <div class="qa-row">
+      <textarea id="newQ" placeholder="اكتبي عبارتك..."></textarea>
+      <button onclick="addQ()">➕</button>
+    </div>
+    <button class="p-close" style="margin-top:9px" onclick="closeP('p-quote')">إغلاق</button>
+  </div>
+</div>
+
+<!-- ADD HABIT PANEL -->
+<div class="overlay" id="p-add" onclick="if(event.target===this)closeP('p-add')">
+  <div class="panel">
+    <div class="drag"></div>
+    <div class="p-title">✦ إضافة عادة</div>
+    <input class="p-inp" id="newHN" placeholder="اسم العادة...">
+    <div class="ep" id="epGrid"></div>
+    <label class="up-area" style="margin-bottom:8px">
+      <input type="file" accept="image/*,video/*,audio/*,application/pdf,.doc,.docx" style="display:none" id="habitFileInp" onchange="prevAttach(this)">
+      📎 إرفاق صورة / فيديو / ملف / PDF
+    </label>
+    <div id="attachPrev" style="margin-bottom:7px"></div>
+    <button class="p-btn" onclick="addHabit()">إضافة ✦</button>
+    <button class="p-close" onclick="closeP('p-add')">إغلاق</button>
+  </div>
+</div>
+
+<!-- TASK PANEL -->
+<div class="overlay" id="p-task" onclick="if(event.target===this)closeP('p-task')">
+  <div class="panel">
+    <div class="drag"></div>
+    <div class="p-title" id="taskTitle">✦ إضافة مهمة</div>
+    <input class="p-inp" id="newTask" placeholder="اكتبي مهمتك...">
+    <button class="p-btn" onclick="addTask()">إضافة ✦</button>
+    <button class="p-close" onclick="closeP('p-task')">إغلاق</button>
+  </div>
+</div>
+
+<script>
+/* ═══════════ DATA ═══════════ */
+const THEMES=[
+  {id:'mauve', label:'🌫 مَوف',   g:'linear-gradient(135deg,#d4b8c8,#b8a8c8,#c0aab8)'},
+  {id:'pink',  label:'🌸 وردي',  g:'linear-gradient(135deg,#f4a8c0,#e890b0,#f0b0c8)'},
+  {id:'blue',  label:'🌊 أزرق',  g:'linear-gradient(135deg,#a8c4e8,#90a8d8,#b0cce8)'},
+  {id:'green', label:'🌿 أخضر',  g:'linear-gradient(135deg,#a8d4b8,#90c4a0,#b8d8c0)'},
+  {id:'peach', label:'🍑 خوخي',  g:'linear-gradient(135deg,#f4c4a8,#e8b090,#f0c8b0)'},
+  {id:'purple',label:'💜 بنفسجي',g:'linear-gradient(135deg,#c8a8e8,#b090d8,#d0b8e8)'},
+];
+const EMOJIS=['🌙','🤲','💨','✨','🌿','📖','💆','🌸','💇','🧘','🇬🇧','🗣️','🧹','💧','📵','🤫','🧠','🌤','🍽️','💫','📺','😴','🔥','💪','🎯','📚','🎨','🌺','💎','🏃','❤️','🌈','⭐','🎵','🎧','🛁','🪞','📿','🎋','🦋','🙏','🌻','🕊️','🌙','🍵','✍️','🎀','🪴'];
+const FLOAT_E=['✨','🌸','💫','⭐','🌺','💖','🦋','🌙','🌷','🌟'];
+const DEFAULT_HABITS=[
+  {id:1,e:'🌙',n:'قيام الليل بسورة ياسين',link:'https://quran.com/36',ll:'📖 ياسين'},
+  {id:2,e:'🤲',n:'الاستغفار + تحصين الصباح'},
+  {id:3,e:'💨',n:'تمارين التنفس + الحمد والشكر'},
+  {id:4,e:'🌿',n:'صلاة الفجر'},
+  {id:5,e:'📖',n:'سورة البقرة',baqara:true},
+  {id:6,e:'💆',n:'مساج الوجه + رقيقة فتح الأرزاق'},
+  {id:7,e:'🌸',n:'العناية بالبشرة والوجه والجسم'},
+  {id:8,e:'💇',n:'العناية بالشعر'},
+  {id:9,e:'🧘',n:'رياضة + تقوية الظهر'},
+  {id:10,e:'🇬🇧',n:'الإنجليزية — تعلم + استخدام يومي'},
+  {id:11,e:'🧹',n:'تنظيم البيت + مساعدة أمي'},
+  {id:12,e:'💧',n:'شرب الماء +2L',water:true},
+  {id:13,e:'📵',n:'إغلاق الهاتف — وقت حر'},
+  {id:14,e:'🤫',n:'الصمت الذهبي — لا نميمة'},
+  {id:15,e:'🧠',n:'بودكاست تطوير النفس',link:'https://open.spotify.com/search/podcasts/%D8%AA%D8%B7%D9%88%D9%8A%D8%B1',ll:'🎧 بودكاست'},
+  {id:16,e:'🌤',n:'تحصين العصر والمساء'},
+  {id:17,e:'💫',n:'جلسة التأمل + الجذب'},
+  {id:18,e:'📺',n:'فيديو تحفيزي + تأمل قبل النوم'},
+  {id:19,e:'😴',n:'النوم مبكراً'},
+];
+const DEFAULT_QUOTES=[
+  {t:'كل يوم هو فرصة جديدة لتكوني نسختك الأفضل',e:'🌸'},
+  {t:'الاستمرارية سر النجاح — لا تتوقفي',e:'✨'},
+  {t:'أنتِ أقوى مما تتخيلين',e:'💪'},
+  {t:'الأرزاق تفتح بالشكر والرضا والحمد',e:'🤲'},
+  {t:'جسدك يسمعك، تكلمي معه بلطف',e:'🌸'},
+  {t:'نسختك الأفضل تنتظرك كل صباح',e:'☀️'},
+  {t:'ابدئي بخطوة صغيرة وستتحول إلى رحلة عظيمة',e:'🦋'},
+];
+
+let ST=JSON.parse(localStorage.getItem('h_v5')||'null')||{
+  habits:DEFAULT_HABITS,done:{},water:{},attachments:{},
+  quotes:DEFAULT_QUOTES,qIdx:0,
+  theme:'mauve',
+  tasks:{weekly:[],monthly:[]},
+  streak:0,lastDate:null,
+  musicTracks:[],trackIdx:0,playing:false,
+  baqaraPdf:null,
+};
+let selE='✨',pendingAttach=null,taskType='weekly';
+let audioCtx=null;
+const TODAY=new Date().toDateString();
+
+/* ═══════════ INIT ═══════════ */
+function init(){
+  if(!ST.done[TODAY])ST.done[TODAY]={};
+  if(!ST.water[TODAY])ST.water[TODAY]=0;
+  if(!ST.tasks)ST.tasks={weekly:[],monthly:[]};
+  if(!ST.attachments)ST.attachments={};
+  if(!ST.musicTracks)ST.musicTracks=[];
+  document.getElementById('sDay').textContent=new Date().getDate();
+  applyTheme(ST.theme,false);
+  buildThemeGrid();
+  buildEpGrid();
+  buildFloatEmojis();
+  renderHabits();
+  renderQuotes();
+  renderTasks();
+  updateProgress();
+  showQuote();
+  buildWeekChart();
+  updateVinylUI();
+  // Restore baqara PDF from separate storage
+  if(ST.baqaraPdf==='__saved__'){
+    ST.baqaraPdf=localStorage.getItem('h_baqara')||null;
+  }
+}
+
+/* ═══════════ THEME ═══════════ */
+function buildThemeGrid(){
+  const g=document.getElementById('thGrid');g.innerHTML='';
+  THEMES.forEach(t=>{
+    const d=document.createElement('div');
+    d.className='th-opt'+(ST.theme===t.id?' sel':'');
+    d.style.background=t.g;d.textContent=t.label;
+    d.onclick=()=>{setTheme(t.id);document.querySelectorAll('.th-opt').forEach(x=>x.classList.remove('sel'));d.classList.add('sel');};
+    g.appendChild(d);
+  });
+}
+function setTheme(id){ST.theme=id;save();applyTheme(id,true);showToast('🎨 تم تغيير الثيم');}
+function applyTheme(id,anim){
+  document.querySelectorAll('.bg-grad').forEach(l=>l.classList.remove('on'));
+  const el=document.getElementById('bg-'+id);
+  if(el)el.classList.add('on');
+}
+function setCustomBg(inp){
+  const f=inp.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=e=>{
+    document.querySelectorAll('.bg-grad').forEach(l=>l.classList.remove('on'));
+    const cb=document.getElementById('bg-custom');
+    cb.style.backgroundImage=`url(${e.target.result})`;
+    cb.style.backgroundSize='cover';
+    cb.classList.add('on');
+    ST.theme='custom';save();showToast('🖼 تم تغيير الخلفية');
+  };r.readAsDataURL(f);closeP('p-settings');
+}
+
+/* ═══════════ FLOATING EMOJIS ═══════════ */
+function buildFloatEmojis(){
+  const wrap=document.getElementById('floatEmojis');wrap.innerHTML='';
+  FLOAT_E.forEach((em,i)=>{
+    const el=document.createElement('div');el.className='fe';
+    el.textContent=em;
+    el.style.left=(5+i*10)+'%';
+    el.style.animationDuration=(10+i*2.5)+'s';
+    el.style.animationDelay=(i*1.8)+'s';
+    el.style.fontSize=(1.1+Math.random()*0.8)+'rem';
+    wrap.appendChild(el);
+  });
+}
+
+/* ═══════════ MUSIC ═══════════ */
+function loadMusic(inp){
+  const files=Array.from(inp.files);if(!files.length)return;
+  ST.musicTracks=[];
+  files.forEach((f,i)=>{
+    const url=URL.createObjectURL(f);
+    ST.musicTracks.push({name:f.name.replace(/\.[^.]+$/,''),url});
+  });
+  ST.trackIdx=0;ST.playing=false;
+  const audio=document.getElementById('audioEl');
+  audio.src=ST.musicTracks[0].url;
+  updateVinylUI();showToast('🎵 تم رفع '+files.length+' مقطع!');
+}
+function togglePlay(){
+  const audio=document.getElementById('audioEl');
+  if(!ST.musicTracks.length){showToast('🎵 ارفعي ملف موسيقى أولاً');return;}
+  if(!audio.src||audio.src===''){audio.src=ST.musicTracks[ST.trackIdx].url;}
+  if(ST.playing){audio.pause();ST.playing=false;}
+  else{audio.play().catch(()=>{});ST.playing=true;}
+  save();updateVinylUI();
+}
+function prevT(){
+  if(!ST.musicTracks.length)return;
+  ST.trackIdx=(ST.trackIdx-1+ST.musicTracks.length)%ST.musicTracks.length;
+  loadTrack();
+}
+function nextT(){
+  if(!ST.musicTracks.length)return;
+  ST.trackIdx=(ST.trackIdx+1)%ST.musicTracks.length;
+  loadTrack();
+}
+function loadTrack(){
+  const audio=document.getElementById('audioEl');
+  audio.src=ST.musicTracks[ST.trackIdx].url;
+  if(ST.playing)audio.play().catch(()=>{});
+  updateVinylUI();
+}
+function updateBar(){
+  const audio=document.getElementById('audioEl');
+  if(!audio.duration)return;
+  const pct=(audio.currentTime/audio.duration)*100;
+  document.getElementById('vBar').style.width=pct+'%';
+}
+function updateVinylUI(){
+  const t=ST.musicTracks[ST.trackIdx];
+  document.getElementById('vTrack').textContent=t?t.name+' 🎵':'اختاري موسيقى 🎵';
+  document.getElementById('vArtist').textContent=t?'مقطع '+(ST.trackIdx+1)+' / '+ST.musicTracks.length:'اضغطي لرفع ملف صوتي';
+  document.getElementById('vLabel').textContent=ST.playing?'▶':'♪';
+  document.getElementById('vDisc').classList.toggle('playing',ST.playing);
+  document.getElementById('vNeedle').classList.toggle('playing',ST.playing);
+  document.getElementById('vPlay').textContent=ST.playing?'⏸':'▶';
+}
+
+/* ═══════════ QUOTES ═══════════ */
+function showQuote(){
+  const q=ST.quotes[ST.qIdx%ST.quotes.length];
+  if(!q)return;
+  document.getElementById('qText').textContent=q.t;
+  document.getElementById('qEmoji').textContent=q.e||'✨';
+}
+function nextQ(){ST.qIdx=(ST.qIdx+1)%ST.quotes.length;save();showQuote();}
+function renderQuotes(){
+  const l=document.getElementById('qList');l.innerHTML='';
+  ST.quotes.forEach((q,i)=>{
+    const d=document.createElement('div');d.className='q-item';
+    d.innerHTML=`<span>${q.e} ${q.t}</span><button class="q-del" onclick="delQ(${i})">🗑</button>`;
+    l.appendChild(d);
+  });
+}
+function addQ(){
+  const t=document.getElementById('newQ').value.trim();if(!t)return;
+  ST.quotes.push({t,e:'✍️'});document.getElementById('newQ').value='';
+  save();renderQuotes();showQuote();showToast('✦ تمت الإضافة');
+}
+function delQ(i){ST.quotes.splice(i,1);save();renderQuotes();showQuote();}
+
+/* ═══════════ HABITS ═══════════ */
+function renderHabits(){
+  const l=document.getElementById('habitsList');l.innerHTML='';
+  ST.habits.forEach((h,i)=>{
+    const done=!!(ST.done[TODAY]||{})[h.id];
+    const el=document.createElement('div');
+    el.className='habit-pill'+(done?' done':'');
+    el.style.animationDelay=(i*0.05)+'s';
+    const wHtml=h.water?`<div class="water-row">${[1,2,3,4,5,6,7,8].map(n=>`<span class="wdrop${(ST.water[TODAY]||0)>=n?' on':''}" onclick="event.stopPropagation();tapW(${n})">💧</span>`).join('')}</div>`:'';
+    const lHtml=h.link?`<a class="h-link" href="${h.link}" target="_blank" onclick="event.stopPropagation()">${h.ll||'🔗'}</a>`:'';
+    const baqaraHtml=h.baqara?(ST.baqaraPdf
+      ?`<span class="h-link" style="cursor:pointer" onclick="event.stopPropagation();openBaqara()">📂 افتح سورة البقرة</span>`
+      :`<label class="h-link" style="cursor:pointer" onclick="event.stopPropagation()"><input type="file" accept="application/pdf" style="display:none" onchange="loadBaqara(this)">📂 رفع سورة البقرة PDF</label>`):'';
+    const att=ST.attachments[h.id];
+    const attHtml=att?`<img class="h-thumb" src="${att.url||att}" onclick="event.stopPropagation();openFV('${att.url||att}','${att.type||'img'}')" alt="">`:'';
+    const attBtn=`<label class="h-file-btn" onclick="event.stopPropagation()"><input type="file" accept="image/*,video/*,audio/*,application/pdf" style="display:none" onchange="attachH(${h.id},this)">📎</label>`;
+    el.innerHTML=`
+      <div class="h-ico">${h.e}</div>
+      <div class="h-body">
+        <div class="h-name">${h.n}</div>
+        <div class="h-extras">${lHtml}${baqaraHtml}${attBtn}${attHtml}</div>
+        ${wHtml}
+      </div>
+      <div class="h-check">${done?'✓':''}</div>
+      <div class="h-dots" onclick="event.stopPropagation();delHabit(${h.id})">···</div>
+    `;
+    el.addEventListener('click',()=>toggleH(h.id));
+    l.appendChild(el);
+  });
+  updateProgress();
+}
+function toggleH(id){
+  if(!ST.done[TODAY])ST.done[TODAY]={};
+  const was=!!ST.done[TODAY][id];
+  ST.done[TODAY][id]=!was;
+  if(!was){showToast('✅ أحسنتِ! واصلي 💪');confetti();}
+  if(ST.habits.every(h=>(ST.done[TODAY]||{})[h.id])){showToast('🌟 يوم مثالي!');confetti(true);}
+  save();renderHabits();
+}
+function delHabit(id){ST.habits=ST.habits.filter(h=>h.id!==id);save();renderHabits();showToast('🗑 تم الحذف');}
+function tapW(n){ST.water[TODAY]=n;save();renderHabits();document.getElementById('sWater').textContent='💧'+n;if(n>=8)showToast('💧 ممتاز! الـ2 لتر كاملة!');}
+function attachH(id,inp){
+  const f=inp.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=e=>{
+    ST.attachments[id]={url:e.target.result,type:f.type.startsWith('image')?'img':'file'};
+    save();renderHabits();showToast('📎 تم الإرفاق');
+  };r.readAsDataURL(f);
+}
+function buildEpGrid(){
+  const g=document.getElementById('epGrid');g.innerHTML='';
+  EMOJIS.forEach(em=>{
+    const b=document.createElement('div');b.className='eb'+(em===selE?' sel':'');
+    b.textContent=em;
+    b.onclick=()=>{selE=em;document.querySelectorAll('.eb').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');};
+    g.appendChild(b);
+  });
+}
+function prevAttach(inp){
+  const f=inp.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=e=>{pendingAttach={url:e.target.result,type:f.type};document.getElementById('attachPrev').innerHTML=`<img src="${e.target.result}" style="width:50px;height:50px;border-radius:10px;object-fit:cover;border:1px solid rgba(255,255,255,0.3);">`};
+  r.readAsDataURL(f);
+}
+function addHabit(){
+  const n=document.getElementById('newHN').value.trim();
+  if(!n){showToast('✏️ اكتبي اسم العادة');return;}
+  const id=Date.now();
+  ST.habits.push({id,e:selE,n});
+  if(pendingAttach){ST.attachments[id]=pendingAttach;pendingAttach=null;}
+  document.getElementById('newHN').value='';
+  document.getElementById('attachPrev').innerHTML='';
+  save();renderHabits();closeP('p-add');showToast('✦ تمت إضافة العادة');
+}
+
+/* ═══════════ TASKS ═══════════ */
+function renderTasks(){
+  ['weekly','monthly'].forEach(type=>{
+    const el=document.getElementById(type+'Tasks');el.innerHTML='';
+    const items=ST.tasks[type]||[];
+    if(!items.length){el.innerHTML='<div class="t-empty">اضغطي ＋</div>';return;}
+    items.forEach((t,i)=>{
+      const d=document.createElement('div');d.className='t-item'+(t.done?' done':'');
+      d.innerHTML=`<div class="t-cb">${t.done?'✓':''}</div><span class="t-text">${t.text}</span>`;
+      d.onclick=()=>{ST.tasks[type][i].done=!ST.tasks[type][i].done;save();renderTasks();};
+      el.appendChild(d);
+    });
+  });
+}
+function openTask(type){
+  taskType=type;
+  document.getElementById('taskTitle').textContent=type==='weekly'?'✦ مهمة أسبوعية':'✦ مهمة شهرية';
+  document.getElementById('newTask').value='';
+  openP('p-task');
+}
+function addTask(){
+  const t=document.getElementById('newTask').value.trim();if(!t)return;
+  if(!ST.tasks[taskType])ST.tasks[taskType]=[];
+  ST.tasks[taskType].push({text:t,done:false});
+  save();renderTasks();closeP('p-task');showToast('✦ تمت الإضافة');
+}
+
+/* ═══════════ PROGRESS ═══════════ */
+function updateProgress(){
+  const total=ST.habits.length||1;
+  const done=ST.habits.filter(h=>(ST.done[TODAY]||{})[h.id]).length;
+  const pct=Math.round(done/total*100);
+  document.getElementById('progFill').style.width=pct+'%';
+  document.getElementById('progPct').textContent=pct+'%';
+  document.getElementById('sDone').textContent=done;
+  document.getElementById('sStreak').textContent='🔥'+ST.streak;
+  document.getElementById('sWater').textContent='💧'+(ST.water[TODAY]||0);
+}
+function buildWeekChart(){
+  const el=document.getElementById('weekBars');el.innerHTML='';
+  const d=['أح','إث','ث','أر','خ','ج','س'];
+  const total=ST.habits.length||1;
+  for(let i=6;i>=0;i--){
+    const dd=new Date();dd.setDate(dd.getDate()-i);
+    const k=dd.toDateString();
+    const done=ST.habits.filter(h=>(ST.done[k]||{})[h.id]).length;
+    const pct=Math.round(done/total*100);
+    const h=Math.max(3,Math.round(pct*0.68));
+    const w=document.createElement('div');w.className='bar-wrap';
+    w.innerHTML=`<div class="bar" style="height:${h}px"></div><div class="bar-lbl">${d[dd.getDay()]}</div>`;
+    el.appendChild(w);
+  }
+}
+
+/* ═══════════ CALENDAR ═══════════ */
+function buildCal(){
+  const now=new Date(),y=now.getFullYear(),m=now.getMonth();
+  const MN=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+  document.getElementById('calTitle').textContent=MN[m]+' '+y;
+  const first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate();
+  const g=document.getElementById('calGrid');g.innerHTML='';
+  for(let i=0;i<first;i++){const e=document.createElement('div');e.style.opacity='0';e.className='cal-day';g.appendChild(e);}
+  for(let d=1;d<=days;d++){
+    const e=document.createElement('div');e.className='cal-day';
+    const ds=new Date(y,m,d).toDateString();
+    if(ds===TODAY)e.classList.add('today');
+    if(ST.done[ds]&&Object.values(ST.done[ds]).some(v=>v))e.classList.add('has');
+    e.textContent=d;g.appendChild(e);
+  }
+}
+
+/* ═══════════ STATS ═══════════ */
+function buildStats(){
+  const total=ST.habits.length||1;
+  const allD=Object.keys(ST.done);
+  let totDone=0,perfect=0;
+  allD.forEach(day=>{const d=ST.done[day]||{};const c=Object.values(d).filter(v=>v).length;totDone+=c;if(c===total)perfect++;});
+  const waterTot=Object.values(ST.water||{}).reduce((a,b)=>a+b,0);
+  const MN=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+  const now=new Date(),cm=now.getMonth();
+  let mBars='';
+  for(let m=Math.max(0,cm-5);m<=cm;m++){
+    let cnt=0,days=0;
+    allD.forEach(day=>{const dd=new Date(day);if(dd.getMonth()===m){days++;cnt+=Object.values(ST.done[day]||{}).filter(v=>v).length;}});
+    const avg=days?Math.round(cnt/days/total*100):0;
+    const h=Math.max(3,Math.round(avg*0.6));
+    mBars+=`<div class="mb-w"><div class="mb" style="height:${h}px"></div><div class="mb-l">${MN[m].slice(0,3)}</div></div>`;
+  }
+  document.getElementById('statsContent').innerHTML=`
+    <div class="s-card"><div class="s-card-title">إجمالي الإنجاز</div>
+      <div class="big-nums">
+        <div class="big-num"><div class="n">${totDone}</div><div class="l">عادة منجزة</div></div>
+        <div class="big-num"><div class="n">${perfect}</div><div class="l">يوم مثالي</div></div>
+        <div class="big-num"><div class="n">${allD.length}</div><div class="l">يوم سجّلتِ</div></div>
+        <div class="big-num"><div class="n">${waterTot}</div><div class="l">كوب ماء</div></div>
+      </div>
+    </div>
+    <div class="s-card"><div class="s-card-title">مقارنة الأشهر</div><div class="month-bars">${mBars}</div></div>
+  `;
+}
+
+/* ═══════════ PAGES ═══════════ */
+function goPage(p){
+  ['today','month','stats'].forEach(x=>{
+    document.getElementById('pg-'+x).style.display=x===p?'block':'none';
+    document.getElementById('nav-'+x).classList.toggle('active',x===p);
+  });
+  if(p==='month')buildCal();
+  if(p==='stats')buildStats();
+}
+
+/* ═══════════ FILE VIEWER ═══════════ */
+function openFV(url,type){
+  const fv=document.getElementById('fv');
+  let html='';
+  if(type==='img'||type.startsWith('image'))html=`<img src="${url}">`;
+  else if(type.startsWith('video'))html=`<video src="${url}" controls></video>`;
+  else if(type.startsWith('audio'))html=`<audio src="${url}" controls></audio>`;
+  else html=`<div style="color:#fff;font-size:0.9rem;text-align:center;padding:20px">📄 لفتح الملف اضغطي هنا<br><br><a href="${url}" style="color:#ccc" download>⬇ تحميل الملف</a></div>`;
+  document.getElementById('fvC').innerHTML=html;
+  fv.classList.add('open');
+}
+function closeFV(){document.getElementById('fv').classList.remove('open');}
+
+/* ═══════════ PANELS ═══════════ */
+function openP(id){document.getElementById(id).classList.add('open');}
+function closeP(id){document.getElementById(id).classList.remove('open');}
+
+/* ═══════════ TOAST ═══════════ */
+let tTimer;
+function showToast(msg){
+  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  clearTimeout(tTimer);tTimer=setTimeout(()=>t.classList.remove('show'),2400);
+}
+
+/* ═══════════ CONFETTI ═══════════ */
+function confetti(big=false){
+  const c=['#d4b8c8','#f4a8c0','#a8c4e8','#a8d4b8','#f4c4a8','#c8a8e8','#fff'];
+  const n=big?32:10;
+  for(let i=0;i<n;i++){
+    setTimeout(()=>{
+      const e=document.createElement('div');e.className='conf';
+      e.style.cssText=`left:${Math.random()*100}%;top:0;width:7px;height:7px;background:${c[~~(Math.random()*c.length)]};border-radius:${Math.random()>.5?'50%':'2px'};animation-duration:${1.8+Math.random()*1.4}s;animation-delay:${Math.random()*0.3}s;`;
+      document.body.appendChild(e);setTimeout(()=>e.remove(),3200);
+    },i*50);
+  }
+}
+
+
+/* ═══ BAQARA PDF ═══ */
+function loadBaqara(inp){
+  const f=inp.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=e=>{
+    ST.baqaraPdf=e.target.result;
+    save();renderHabits();
+    showToast('📖 تم حفظ سورة البقرة!');
+  };
+  r.readAsDataURL(f);
+}
+function openBaqara(){
+  if(!ST.baqaraPdf){showToast('📖 ارفعي ملف PDF أولاً');return;}
+  const fv=document.getElementById('fv');
+  // Open PDF in new tab for direct viewing
+  const blob = dataURLtoBlob(ST.baqaraPdf);
+  const url = URL.createObjectURL(blob);
+  window.open(url, '_blank');
+  showToast('📖 تم فتح السورة في تبويب جديد');
+}
+
+
+function dataURLtoBlob(dataURL){
+  const arr=dataURL.split(',');
+  const mime=arr[0].match(/:(.*?);/)[1];
+  const bstr=atob(arr[1]);
+  let n=bstr.length;
+  const u8=new Uint8Array(n);
+  while(n--){u8[n]=bstr.charCodeAt(n);}
+  return new Blob([u8],{type:mime});
+}
+/* ═══════════ SAVE ═══════════ */
+function save(){
+  try{
+    const s={...ST,
+      musicTracks:ST.musicTracks.map(t=>({...t,url:t.url.startsWith('blob')?'':t.url}))
+    };
+    // Save baqara PDF in separate key due to size
+    if(ST.baqaraPdf){
+      try{localStorage.setItem('h_baqara',ST.baqaraPdf);}catch(e){}
+      s.baqaraPdf='__saved__';
+    }
+    localStorage.setItem('h_v5',JSON.stringify(s));
+  }catch(e){}
+}
+
+/* START */
+init();
+</script>
+</body>
+</html>
